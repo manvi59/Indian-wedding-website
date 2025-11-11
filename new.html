@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Wedding Planners | Dream Destination Weddings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* filter: brightness(70%); */
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      /* background: rgba(238,183,251,0.2);
+      backdrop-filter: blur(3px); */
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      color: #fff;
+      text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+    }
+
+    .hero-content p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #f9e7fe;
+    }
+
+    .hero-content a {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 30px;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #EEB7FB, #F9E7FE);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 4px 20px rgba(238,183,251,0.5);
+      transition: all 0.3s ease;
+    }
+
+    .hero-content a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 30px rgba(238,183,251,0.7);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Section Base */
+    section {
+      padding: 80px 10%;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background: #F9E7FE;
+      border-top-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+
+    .about img {
+      width: 45%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-right: 50px;
+    }
+
+    .about-content {
+      flex: 1;
+      max-width: 550px;
+    }
+
+    .about-content h2 {
+      color: #b76eb8;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .about-content a {
+      text-decoration: none;
+      background: linear-gradient(45deg, #EEB7FB, #F9E7FE);
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(238,183,251,0.4);
+      transition: 0.3s;
+    }
+
+    .about-content a:hover {
+      transform: scale(1.05);
+    }
+
+    /* Services Section */
+    .services {
+      background: #fff;
+      text-align: center;
+    }
+
+    .services h2 {
+      color: #b76eb8;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #F9E7FE;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      transition: all 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(238,183,251,0.5);
+    }
+
+    .service-card i {
+      font-size: 2rem;
+      color: #b76eb8;
+      margin-bottom: 20px;
+    }
+
+    /* Gallery */
+    .gallery {
+      background: #F9E7FE;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      color: #b76eb8;
+      margin-bottom: 40px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.4s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #b76eb8;
+      color: #fff;
+      text-align: center;
+      padding: 50px 10%;
+      border-top-left-radius: 60px;
+    }
+
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #F9E7FE;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="/8775886-uhd_3840_2160_25fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Indian Wedding Planners</h1>
+      <p>Creating Everlasting Memories in Royal Destinations</p>
+      <a href="#about">Explore More</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <img src="https://images.unsplash.com/photo-1552793494-111afe03d0ca?auto=format&fit=crop&w=800&q=80" alt="Wedding Couple">
+    <div class="about-content">
+      <h2>Royal. Elegant. Timeless.</h2>
+      <p>We curate luxury weddings in India's most majestic destinations — from royal palaces in Jaipur to serene lakes of Udaipur. Every detail, from décor to rituals, reflects your love story with beauty and grace.</p>
+      <a href="#services">View Our Services</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <h2>Our Expertise</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <i class="fas fa-ring"></i>
+        <h3>Luxury Décor</h3>
+        <p>Enchanting floral arrangements, elegant lighting, and royal themes crafted to perfection.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-globe"></i>
+        <h3>Destination Weddings</h3>
+        <p>Celebrate love in India’s most iconic destinations or exotic global locales.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-music"></i>
+        <h3>Entertainment & Events</h3>
+        <p>From live music to grand processions, we design unforgettable celebrations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery" id="gallery">
+    <h2>Magical Wedding Moments</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1604430449328-9e2a3ff703b6?auto=format&fit=crop&w=800&q=80" alt="Wedding 1">
+      <img src="https://images.unsplash.com/photo-1524492449090-6b7f5d534dd2?auto=format&fit=crop&w=800&q=80" alt="Wedding 2">
+      <img src="https://images.unsplash.com/photo-1529634895504-6cb9e1d252c1?auto=format&fit=crop&w=800&q=80" alt="Wedding 3">
+      <img src="https://images.unsplash.com/photo-1559628233-5f44c0b6c8a5?auto=format&fit=crop&w=800&q=80" alt="Wedding 4">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h3>Indian Wedding Planners</h3>
+    <p>Crafting unforgettable celebrations that blend culture, luxury, and love.</p>
+    <div style="margin-top:15px;">
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">Contact</a>
+    </div>
+    <p style="margin-top:10px;">© 2025 Indian Wedding Planners. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Animate sections on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
