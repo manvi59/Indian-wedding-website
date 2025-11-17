@@ -24,7 +24,7 @@
         --card-shadow: 0 14px 40px rgba(177, 123, 250, 0.12);
         --glass: rgba(255, 255, 255, 0.85);
         --radius: 14px;
-        --maxw: 1200px;
+        --maxw: 1450px;
       }
       * {
         box-sizing: border-box;
@@ -80,8 +80,11 @@
         place-items: center;
         font-weight: 700;
         color: var(--white);
-        background: linear-gradient(135deg, var(--primary), var(--accent));
+        /* background: linear-gradient(135deg, var(--primary), var(--accent)); */
         box-shadow: 0 8px 30px rgba(177, 123, 250, 0.15);
+        background: white;
+        display: flex;
+        justify-content: center;
       }
       .brand h1 {
         font-family: "Playfair Display", serif;
@@ -573,9 +576,12 @@ aside.filters:hover {
         <a href="index.html" style="text-decoration: none;">
 
             <div class="brand">
-              <div class="logo-mark" aria-hidden="true">IWP</div>
+              <!-- <div class="logo-mark" aria-hidden="true">IWP</div> -->
+                <div class="logo-mark">
+            <img src="img/logo/flora-logo.png"  height="60px" width="60px" style="border-radius: 50%;"/>
+          </div>
               <div>
-                <h1>Indian Wedding Planners</h1>
+                <h1>Wedding Flora</h1>
                 <div style="font-size: 12px; color: var(--muted)">
                   Jaipur • Udaipur • Mumbai • Global
                 </div>
@@ -1128,7 +1134,7 @@ aside.filters:hover {
     <footer class="site-footer" role="contentinfo">
       <div class="footer-inner">
         <div class="footer-left">
-          <h4>Indian Wedding Planners</h4>
+          <h4>Wedding Flora</h4>
           <p>
             We design destination weddings that blend cultural richness with
             modern elegance — flawless planning, beautiful design, and heartfelt
